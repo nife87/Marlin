@@ -489,15 +489,15 @@
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
   #if ENABLED(PID_PARAMS_PER_HOTEND)
-  // E3D V6 50W
-  #define DEFAULT_Kp 13.42
-  #define DEFAULT_Ki 0.91
-  #define DEFAULT_Kd 49.44
-
+    // Specify between 1 and HOTENDS values per array.
+    // If fewer than EXTRUDER values are provided, the last element will be repeated.
+    #define DEFAULT_Kp_LIST {  22.20,  22.20 }
+    #define DEFAULT_Ki_LIST {   1.08,   1.08 }
+    #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp   16.19
+    #define DEFAULT_Ki   1.27
+    #define DEFAULT_Kd   51.64
   #endif
 #endif // PIDTEMP
 
